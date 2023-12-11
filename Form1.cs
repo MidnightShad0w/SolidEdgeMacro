@@ -1,10 +1,8 @@
 ﻿using SolidEdgeCommunity;
 using SolidEdgeFramework;
 using SolidEdgeFrameworkSupport;
-using SolidEdgePart;
 using System;
 using System.Data;
-using System.Linq;
 using System.Windows.Forms;
 
 namespace Samsonov25
@@ -30,7 +28,6 @@ namespace Samsonov25
                 {
                     return;
                 }
-
                 document = (SolidEdgeDocument)application.ActiveDocument;
                 variables = (Variables)document.Variables;
 
@@ -43,7 +40,7 @@ namespace Samsonov25
                 panel = new Panel();
                 panel.AutoScroll = true;
                 panel.Location = new System.Drawing.Point(0, 0);
-                panel.Size = new System.Drawing.Size(580, 450);
+                panel.Size = new System.Drawing.Size(650, 450);
                 Controls.Add(panel);
 
                 dataGridView = new DataGridView();
@@ -116,11 +113,9 @@ namespace Samsonov25
                     double doubleValue;
                     if (double.TryParse(value, out doubleValue))
                     {
-
-                            dimension.SetComment(comment);
-                            dimension.Value = doubleValue;
-                            dimension.Formula = formula;
-
+                        dimension.SetComment(comment);
+                        dimension.Value = doubleValue;
+                        dimension.Formula = formula;
                     }
                     else
                     {
